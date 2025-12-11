@@ -1,1 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>GPHMT | Greater Pacific Highlands Math Tournament</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="Greater Pacific Highlands Math Tournament – a student-run math competition for middle and high school students."
+  />
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+</head>
+<body>
+  <!-- Back to top button -->
+  <button id="backToTop" aria-label="Back to top">
+    ↑
+  </button>
 
+  <!-- Decorative background blobs -->
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+
+  <!-- Header / Nav -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <div class="logo">
+        <div class="logo-mark">π</div>
+        <div class="logo-text">
+          <span class="logo-title">GPH Math Tournament</span>
+          <span class="logo-subtitle">Greater Pacific Highlands</span>
+        </div>
+      </div>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#hero">Home</a>
+        <a href="#rounds">Rounds</a>
+        <a href="#logistics">Logistics</a>
+        <a href="#archive">Archive</a>
+        <a href="#faq">FAQ</a>
+        <a href="#register" class="nav-cta">Register</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero" id="hero">
+      <div class="container hero-inner">
+        <div class="hero-left">
+          <p class="hero-kicker">Greater Pacific Highlands Math Tournament</p>
+          <h1>
+            A day of<br/>
+            <span class="hero-accent">problems, proofs, and people</span>.
+          </h1>
+          <p class="hero-subtitle">
+            GPHMT is a student-run math competition for middle and high school students.
+            Tackle challenging problems, meet other math enthusiasts, and experience
+            the joy of creative problem solving.
+          </p>
+          <div class="hero-actions">
+            <a href="#register" class="btn primary">Register Now</a>
+            <button class="btn secondary" data-scroll="#rounds">
+              View Rounds
+            </button>
+          </div>
+          <div class="hero-tags">
+            <span>Individual</span>
+            <span>Team</span>
+            <span>Guts</span>
+            <span>Proof-focused</span>
+          </div>
+        </div>
+
+        <div class="hero-right">
+          <div class="hero-card hero-card-main">
+            <h2>GPHMT 2026</h2>
+            <p class="hero-card-sub">Greater Pacific Highlands • San Diego, CA</p>
+            <div class="hero-card-grid">
+              <div>
+                <span class="label">Date</span>
+                <span class="value">March 7, 2026</span>
+              </div>
+              <div>
+                <span class="label">Time</span>
+                <span class="value">9:00 AM – 4:30 PM</span>
+              </div>
+              <div>
+                <span class="label">Location</span>
+                <span class="value">[Your School Name]</span>
+              </div>
+              <div>
+                <span class="label">Divisions</span>
+                <span class="value">Middle &amp; High School</span>
+              </div>
+            </div>
+            <div class="hero-pill-row">
+              <div class="pill">
+                <span class="pill-number">150+</span>
+                <span class="pill-label">Competitors</span>
+              </div>
+              <div class="pill">
+                <span class="pill-number">X</span>
+                <span class="pill-label">Schools</span>
+              </div>
+              <div class="pill">
+                <span class="pill-number">$Yk+</span>
+                <span class="pill-label">Awards</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-card hero-card-side">
+            <p>“The problems felt like mini Olympiads but still friendly. Would 100% come again.”</p>
+            <p class="hero-card-quote-meta">— Past Participant</p>
+          </div>
+        </div>
+      </div>
+      <div class="hero-scroll-hint">
+        <span>Scroll to explore</span>
+        <div class="scroll-dot"></div>
+      </div>
+    </section>
+
+    <!-- Rounds / Structure -->
+    <section class="section" id="rounds">
+      <div class="container">
+        <div class="section-header">
+          <h2>Rounds &amp; Structure</h2>
+          <p>Three rounds designed to test speed, depth, and collaboration.</p>
+        </div>
+
+        <div class="round-tabs">
+          <button class="round-tab active" data-round="individual">Individual Round</button>
+          <button class="round-tab" data-round="team">Team Round</button>
+          <button class="round-tab" data-round="guts">Guts / Relay</button>
+        </div>
+
+        <div class="round-panels">
+          <div class="round-panel active" data-round-panel="individual">
+            <div class="panel-grid">
+              <div>
+                <h3>Individual Round</h3>
+                <p>
+                  A written round focusing on creative problem solving in algebra,
+                  combinatorics, geometry, and number theory. Problems increase in
+                  difficulty and reward persistence.
+                </p>
+                <ul class="clean-list">
+                  <li>Format: short answer</li>
+                  <li>Suggested level: AMC/AIME-style</li>
+                  <li>Scoring rewards accuracy over guessing</li>
+                </ul>
+              </div>
+              <div class="panel-meta">
+                <div><span>Duration</span><strong>90 minutes</strong></div>
+                <div><span>Questions</span><strong>~20–25</strong></div>
+                <div><span>Difficulty</span><strong>AMC8 → AIME</strong></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="round-panel" data-round-panel="team">
+            <div class="panel-grid">
+              <div>
+                <h3>Team Round</h3>
+                <p>
+                  Four students, one answer sheet. Problems are designed to encourage
+                  discussion, argument, and multiple approaches to the same problem.
+                </p>
+                <ul class="clean-list">
+                  <li>Teams of up to 4</li>
+                  <li>Mixed difficulty, heavy on collaboration</li>
+                  <li>Tiebreakers may use team scores</li>
+                </ul>
+              </div>
+              <div class="panel-meta">
+                <div><span>Duration</span><strong>60 minutes</strong></div>
+                <div><span>Teams</span><strong>Up to 4 students</strong></div>
+                <div><span>Skills</span><strong>Communication, strategy</strong></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="round-panel" data-round-panel="guts">
+            <div class="panel-grid">
+              <div>
+                <h3>Guts / Relay Round</h3>
+                <p>
+                  Fast-paced, high-energy round where teams receive sets of problems
+                  in waves. Perfect for students who enjoy racing the clock.
+                </p>
+                <ul class="clean-list">
+                  <li>Problems released in sets</li>
+                  <li>Score updates during the round</li>
+                  <li>Great for live spectating</li>
+                </ul>
+              </div>
+              <div class="panel-meta">
+                <div><span>Duration</span><strong>60 minutes</strong></div>
+                <div><span>Format</span><strong>Guts-style</strong></div>
+                <div><span>Energy</span><strong>Maximum 🔥</strong></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <p class="section-note">
+          A full rules PDF (including scoring, tie-breaking, and division structure)
+          will be posted here once finalized.
+        </p>
+      </div>
+    </section>
+
+    <!-- Logistics / Schedule -->
+    <section class="section section-alt" id="logistics">
+      <div class="container">
+        <div class="section-header">
+          <h2>Logistics &amp; Schedule</h2>
+          <p>Everything you need to know for the day of the tournament.</p>
+        </div>
+
+        <div class="logistics-grid">
+          <div>
+            <h3>Schedule</h3>
+            <div class="timeline">
+              <div class="timeline-item">
+                <div class="timeline-time">8:30–9:00</div>
+                <div class="timeline-content">
+                  <h4>Check-in &amp; Welcome</h4>
+                  <p>Pick up name tags, materials, and find your seat.</p>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-time">9:00–11:00</div>
+                <div class="timeline-content">
+                  <h4>Individual Round</h4>
+                  <p>Work independently on a set of challenging problems.</p>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-time">11:00–12:00</div>
+                <div class="timeline-content">
+                  <h4>Lunch &amp; Community</h4>
+                  <p>Meet other students, coaches, and volunteers.</p>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-time">12:00–1:30</div>
+                <div class="timeline-content">
+                  <h4>Team Round</h4>
+                  <p>Collaborate with your teammates on multi-step problems.</p>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-time">1:45–2:45</div>
+                <div class="timeline-content">
+                  <h4>Guts / Relay</h4>
+                  <p>Fast-paced team competition with live scoring.</p>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-time">3:00–4:00</div>
+                <div class="timeline-content">
+                  <h4>Awards &amp; Closing</h4>
+                  <p>Individual and team awards, plus closing remarks.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h3>Location &amp; Details</h3>
+            <div class="info-card">
+              <p>
+                <strong>Venue:</strong><br/>
+                [Your School Name]<br/>
+                [Street Address]<br/>
+                San Diego, CA
+              </p>
+            </div>
+            <div class="info-card">
+              <p>
+                <strong>Parking:</strong><br/>
+                Free parking will be available in the main school lot.
+                Coaches and parents will receive a campus map by email.
+              </p>
+            </div>
+            <div class="info-card">
+              <p>
+                <strong>What to bring:</strong><br/>
+                Pencils, erasers, and a non-graphing calculator (if allowed by rules).
+              </p>
+            </div>
+            <div class="info-card">
+              <p>
+                <strong>Contact:</strong><br/>
+                <a href="mailto:info@gphmt.org">info@gphmt.org</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Archive -->
+    <section class="section" id="archive">
+      <div class="container">
+        <div class="section-header">
+          <h2>Past Contests &amp; Archive</h2>
+          <p>Use past problems to train, teach, or just nerd out.</p>
+        </div>
+
+        <div class="archive-grid">
+          <article class="archive-card">
+            <div class="archive-year">2025</div>
+            <h3>GPHMT 2025</h3>
+            <p>Problems, solutions, and statistics from the 2025 contest.</p>
+            <div class="archive-links">
+              <a href="#" class="chip disabled">Problems (coming soon)</a>
+              <a href="#" class="chip disabled">Solutions (coming soon)</a>
+              <a href="#" class="chip disabled">Score report</a>
+            </div>
+          </article>
+
+          <article class="archive-card">
+            <div class="archive-year">2024</div>
+            <h3>GPHMT 2024</h3>
+            <p>The inaugural Greater Pacific Highlands Math Tournament.</p>
+            <div class="archive-links">
+              <a href="#" class="chip disabled">Problems (coming soon)</a>
+              <a href="#" class="chip disabled">Solutions (coming soon)</a>
+            </div>
+          </article>
+
+          <article class="archive-card">
+            <div class="archive-year">Resources</div>
+            <h3>Training Sets</h3>
+            <p>Curated problem sets inspired by GPHMT style.</p>
+            <div class="archive-links">
+              <a href="#" class="chip disabled">Algebra</a>
+              <a href="#" class="chip disabled">Geo</a>
+              <a href="#" class="chip disabled">NT/Combo</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section section-alt" id="faq">
+      <div class="container">
+        <div class="section-header">
+          <h2>Frequently Asked Questions</h2>
+          <p>Still confused? Start here.</p>
+        </div>
+
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-question">
+              Who can participate?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>
+                GPHMT is open to middle and high school students. Students may
+                register individually or through a school/coach.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              Do I need a team to sign up?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>
+                No. Students can register individually. We will either place you
+                on a team or let you compete as an individual in team scoring,
+                depending on final rules.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              What level are the problems?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>
+                The early problems should be approachable for students comfortable
+                with AMC 8/10, while later problems may reach AIME-style difficulty.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              Can coaches or parents attend?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>
+                Yes. Coaches and parents are welcome to stay on campus, spectate
+                during certain rounds (like Guts), and attend the awards ceremony.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              How do I ask more questions?
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>
+                Email us at <a href="mailto:info@gphmt.org">info@gphmt.org</a>.
+                We’ll get back to you as soon as we can.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Register -->
+    <section class="section section-highlight" id="register">
+      <div class="container">
+        <div class="section-header center">
+          <h2>Register for GPHMT 2026</h2>
+          <p>
+            Registration is handled online through a simple form.
+            Coaches may register whole teams; individuals may register themselves.
+          </p>
+        </div>
+
+        <div class="register-grid">
+          <div class="register-card">
+            <h3>Key Details</h3>
+            <ul class="clean-list">
+              <li>Fee: <strong>$X per student</strong></li>
+              <li>Includes lunch and all contest materials</li>
+              <li>Need-based fee waivers available upon request</li>
+            </ul>
+          </div>
+          <div class="register-card">
+            <h3>Ready to Register?</h3>
+            <p>
+              Click the button below to go to the registration form.
+            </p>
+            <a
+              href="https://forms.gle/your-google-form-here"
+              class="btn primary wide"
+              target="_blank"
+              rel="noopener"
+            >
+              Open Registration Form
+            </a>
+            <p class="register-note">
+              Having trouble with registration? Email
+              <a href="mailto:registration@gphmt.org">registration@gphmt.org</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <p>&copy; <span id="year"></span> Greater Pacific Highlands Math Tournament.</p>
+        <p class="footer-sub">Organized by students in the Greater Pacific Highlands area.</p>
+      </div>
+      <div class="footer-right">
+        <a href="#hero">Back to top</a>
+        <span>•</span>
+        <span>Hosted on GitHub Pages</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
