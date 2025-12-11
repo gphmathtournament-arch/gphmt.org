@@ -1,7 +1,9 @@
 // Simple form validation and submission
 document.addEventListener('DOMContentLoaded', function() {
     const registrationForm = document.getElementById('registrationForm');
+    const volunteerForm = document.getElementById('volunteerForm');
     
+    // Registration form validation
     if (registrationForm) {
         registrationForm.addEventListener('submit', function(e) {
             e.preventDefault();
@@ -34,6 +36,40 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Reset the form
             registrationForm.reset();
+        });
+    }
+    
+    // Volunteer form validation
+    if (volunteerForm) {
+        volunteerForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Basic form validation
+            const fullname = document.getElementById('volunteer-fullname').value.trim();
+            const email = document.getElementById('volunteer-email').value.trim();
+            const expertise = document.getElementById('volunteer-expertise').value;
+            
+            // Validate required fields
+            if (!fullname || !email || !expertise) {
+                alert('Please fill out all required fields (name, email, and area of expertise).');
+                return;
+            }
+            
+            // Basic email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                alert('Please enter a valid email address.');
+                return;
+            }
+            
+            // Show success message
+            alert('Thank you for volunteering! We will contact you at ' + email + ' soon with more details.');
+            
+            // In a real application, you would send this data to a server
+            // Example: sendFormData(formData);
+            
+            // Reset the form
+            volunteerForm.reset();
         });
     }
     
