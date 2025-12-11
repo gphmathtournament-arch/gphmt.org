@@ -6,7 +6,8 @@ function createNavbar() {
             <div class="nav-brand">
                 <a href="/" class="logo">GPHMT</a>
             </div>
-            <ul class="nav-menu">
+            <button class="menu-toggle" id="menuToggle">☰</button>
+            <ul class="nav-menu" id="navMenu">
                 <li><a href="/about.html">About</a></li>
                 <li><a href="/rules.html">Rules</a></li>
                 <li><a href="/archive.html">Archive</a></li>
@@ -59,80 +60,43 @@ document.addEventListener('DOMContentLoaded', function() {
     
     if (navbarContainer) {
         navbarContainer.innerHTML = createNavbar();
+        
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const navMenu = document.getElementById('navMenu');
+        
+        if (menuToggle) {
+            menuToggle.addEventListener('click', function() {
+                navMenu.classList.toggle('active');
+            });
+        }
+        
+        // Close menu when a link is clicked
+        const navLinks = navMenu.querySelectorAll('a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                navMenu.classList.remove('active');
+            });
+        });
     }
     if (footerContainer) {
         footerContainer.innerHTML = createFooter();
     }
-    const registrationForm = document.getElementById('registrationForm');
-    const volunteerForm = document.getElementById('volunteerForm');
     
-    // Registration form validation
-    if (registrationForm) {
-        registrationForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Basic form validation
-            const fullname = document.getElementById('fullname').value.trim();
-            const email = document.getElementById('email').value.trim();
-            const school = document.getElementById('school').value.trim();
-            const grade = document.getElementById('grade').value;
-            const terms = document.getElementById('terms').checked;
-            
-            // Validate required fields
-            if (!fullname || !email || !school || !grade || !terms) {
-                alert('Please fill out all required fields and agree to the terms.');
-                return;
-            }
-            
-            // Basic email validation
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailRegex.test(email)) {
-                alert('Please enter a valid email address.');
-                return;
-            }
-            
-            // Show success message
-            alert('Thank you for registering! We will send confirmation details to ' + email);
-            
-            // In a real application, you would send this data to a server
-            // Example: sendFormData(formData);
-            
-            // Reset the form
-            registrationForm.reset();
-        });
-    }
+    // Registration form checkbox handler
+    const agreeRulesCheckbox = document.getElementById('agreeRules');
+    const registrationLink = document.getElementById('registrationLink');
+    const rulesWarning = document.getElementById('rulesWarning');
     
-    // Volunteer form validation
-    if (volunteerForm) {
-        volunteerForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Basic form validation
-            const fullname = document.getElementById('volunteer-fullname').value.trim();
-            const email = document.getElementById('volunteer-email').value.trim();
-            const expertise = document.getElementById('volunteer-expertise').value;
-            
-            // Validate required fields
-            if (!fullname || !email || !expertise) {
-                alert('Please fill out all required fields (name, email, and area of expertise).');
-                return;
+    if (agreeRulesCheckbox && registrationLink && rulesWarning) {
+        agreeRulesCheckbox.addEventListener('change', function() {
+            if (this.checked) {
+                registrationLink.style.display = 'inline-block';
+                rulesWarning.style.display = 'none';
+            } else {
+                registrationLink.style.display = 'none';
+                rulesWarning.style.display = 'block';
             }
-            
-            // Basic email validation
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailRegex.test(email)) {
-                alert('Please enter a valid email address.');
-                return;
-            }
-            
-            // Show success message
-            alert('Thank you for volunteering! We will contact you at ' + email + ' soon with more details.');
-            
-            // In a real application, you would send this data to a server
-            // Example: sendFormData(formData);
-            
-            // Reset the form
-            volunteerForm.reset();
         });
     }
     

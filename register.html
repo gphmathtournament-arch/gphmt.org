@@ -37,11 +37,9 @@
                     <div class="register-info">
                         <h2>Registration Details</h2>
                         <p><strong>Registration Window:</strong> [DATES TBD]</p>
-                        <p><strong>Registration Fee:</strong> [AMOUNT TBD]</p>
                         <p><strong>Tournament Date:</strong> [DATE TBD]</p>
                         <p><strong>Tournament Time:</strong> [TIME TBD]</p>
                         <p><strong>Location:</strong> [LOCATION TBD]</p>
-                        <p><strong>Registration Limit:</strong> [CAPACITY TBD]</p>
                         
                         <h3>What to Bring</h3>
                         <ul>
@@ -49,82 +47,29 @@
                             <li>Writing instruments (pencil or pen)</li>
                             <li>Approved calculator (if permitted)</li>
                         </ul>
-
-                        <h3>Important Notes</h3>
-                        <ul>
-                            <li>Registration is first-come, first-served</li>
-                            <li>Early registration is recommended</li>
-                            <li>All registration must be completed before [DATE TBD]</li>
-                            <li>You agree to follow all tournament rules by registering</li>
-                        </ul>
                     </div>
                     
-                    <form id="registrationForm" class="register-form" novalidate>
+                    <div class="register-form">
                         <h2>Registration Form</h2>
+                        <p>Please read the rules and agree to them below to access the registration form.</p>
                         
-                        <div class="form-group">
-                            <label for="fullname">Full Name *</label>
-                            <input type="text" id="fullname" name="fullname" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="email">Email Address *</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="school">School Name *</label>
-                            <input type="text" id="school" name="school" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="grade">Grade Level *</label>
-                            <select id="grade" name="grade" required>
-                                <option value="">-- Select Grade --</option>
-                                <option value="9">9th Grade</option>
-                                <option value="10">10th Grade</option>
-                                <option value="11">11th Grade</option>
-                                <option value="12">12th Grade</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="phone">Phone Number</label>
-                            <input type="tel" id="phone" name="phone">
-                        </div>
-
-                        <div class="form-group">
-                            <label for="parentemail">Parent/Guardian Email (if under 18)</label>
-                            <input type="email" id="parentemail" name="parentemail">
-                        </div>
-
                         <div class="form-group checkbox">
-                            <input type="checkbox" id="terms" name="terms" required>
-                            <label for="terms">I agree to the tournament rules and code of conduct *</label>
+                            <input type="checkbox" id="agreeRules" name="agreeRules">
+                            <label for="agreeRules">I agree to follow all tournament rules and code of conduct</label>
                         </div>
-
-                        <button type="submit" class="btn btn-primary">Submit Registration</button>
-                    </form>
+                        
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSefMCB5B3w5hnERZ98_weJ7NC9zWBX1FQFY5UYWJIE0XFvMHg/viewform?usp=dialog" class="btn btn-primary" target="_blank" id="registrationLink" style="display: none;">Open Registration Form</a>
+                        
+                        <p id="rulesWarning" class="warning-text">Please agree to the tournament rules above to proceed with registration.</p>
+                    </div>
                 </div>
 
-                <article class="content-item">
-                    <h2>Frequently Asked Questions</h2>
-                    
-                    <h3>Who can participate?</h3>
-                    <p>Any high school student (grades 9-12) from the Greater Pacific Highlands region is welcome to participate. All skill levels are encouraged to compete.</p>
-                    
-                    <h3>Can I register on the day of the tournament?</h3>
-                    <p>Registration closes on [DATE TBD]. We recommend registering well in advance to guarantee your spot, as spaces may fill up.</p>
-                    
-                    <h3>Is there a registration fee?</h3>
-                    <p>Yes, the registration fee is [AMOUNT TBD]. This helps cover the costs of developing questions, printing materials, and hosting the tournament.</p>
-                    
-                    <h3>Can I compete if I'm registered at a school outside the region?</h3>
-                    <p>Please contact <a href="mailto:organizers@gphmt.org">organizers@gphmt.org</a> for questions about eligibility.</p>
-                    
-                    <h3>What if I have accessibility needs?</h3>
-                    <p>We want to ensure all students can participate. Please note any special accommodations needed when you register, and contact the organizers to discuss arrangements.</p>
-                </article>
+                <a href="/rules.html" class="cta-box">
+                    <div>
+                        <h2>More Questions?</h2>
+                        <p>Frequently asked questions</p>
+                    </div>
+                </a>
             </div>
         </section>
     </main>
