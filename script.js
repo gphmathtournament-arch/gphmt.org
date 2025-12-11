@@ -1,119 +1,65 @@
-// Smooth scroll for buttons with data-scroll
-document.querySelectorAll("[data-scroll]").forEach((btn) => {
-  btn.addEventListener("click", () => {
-    const target = btn.getAttribute("data-scroll");
-    const el = document.querySelector(target);
-    if (el) el.scrollIntoView({ behavior: "smooth" });
-  });
-});
-
-// Highlight nav on scroll
-const navLinks = document.querySelectorAll(".nav-links a[href^='#']");
-const sections = Array.from(navLinks)
-  .map((link) => document.querySelector(link.getAttribute("href")))
-  .filter(Boolean);
-
-window.addEventListener("scroll", () => {
-  const scrollPos = window.scrollY + 110; // offset for sticky header
-  let currentSectionId = "";
-
-  sections.forEach((section) => {
-    if (scrollPos >= section.offsetTop) {
-      currentSectionId = section.id;
+// Simple form validation and submission
+document.addEventListener('DOMContentLoaded', function() {
+    const registrationForm = document.getElementById('registrationForm');
+    
+    if (registrationForm) {
+        registrationForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Basic form validation
+            const fullname = document.getElementById('fullname').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const school = document.getElementById('school').value.trim();
+            const grade = document.getElementById('grade').value;
+            const terms = document.getElementById('terms').checked;
+            
+            // Validate required fields
+            if (!fullname || !email || !school || !grade || !terms) {
+                alert('Please fill out all required fields and agree to the terms.');
+                return;
+            }
+            
+            // Basic email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                alert('Please enter a valid email address.');
+                return;
+            }
+            
+            // Show success message
+            alert('Thank you for registering! We will send confirmation details to ' + email);
+            
+            // In a real application, you would send this data to a server
+            // Example: sendFormData(formData);
+            
+            // Reset the form
+            registrationForm.reset();
+        });
     }
-  });
-
-  navLinks.forEach((link) => {
-    const href = link.getAttribute("href").replace("#", "");
-    link.classList.toggle("active", href === currentSectionId);
-  });
-});
-
-// Mobile nav toggle
-const navToggle = document.getElementById("navToggle");
-const navLinksEl = document.getElementById("navLinks");
-
-if (navToggle && navLinksEl) {
-  navToggle.addEventListener("click", () => {
-    navLinksEl.classList.toggle("open");
-  });
-
-  // Close nav when clicking a link (on mobile)
-  navLinksEl.querySelectorAll("a").forEach((link) => {
-    link.addEventListener("click", () => {
-      navLinksEl.classList.remove("open");
+    
+    // Smooth scrolling for anchor links (polyfill for older browsers)
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            if (href !== '#' && document.querySelector(href)) {
+                e.preventDefault();
+                document.querySelector(href).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+        });
     });
-  });
-}
+});
 
-// Round tabs
-const roundTabs = document.querySelectorAll(".round-tab");
-const roundPanels = document.querySelectorAll(".round-panel");
-
-roundTabs.forEach((tab) => {
-  tab.addEventListener("click", () => {
-    const round = tab.getAttribute("data-round");
-
-    roundTabs.forEach((t) => t.classList.remove("active"));
-    tab.classList.add("active");
-
-    roundPanels.forEach((panel) => {
-      const panelRound = panel.getAttribute("data-round-panel");
-      panel.classList.toggle("active", panelRound === round);
+// Keyboard accessibility for form
+document.addEventListener('DOMContentLoaded', function() {
+    const inputs = document.querySelectorAll('input, select, textarea, button');
+    inputs.forEach((input, index) => {
+        input.addEventListener('keydown', function(e) {
+            if (e.key === 'Tab') {
+                // Allow default tab behavior
+                return;
+            }
+        });
     });
-  });
 });
-
-// FAQ accordion
-const faqItems = document.querySelectorAll(".faq-item");
-
-faqItems.forEach((item) => {
-  const question = item.querySelector(".faq-question");
-  const answer = item.querySelector(".faq-answer");
-
-  question.addEventListener("click", () => {
-    const isOpen = item.classList.contains("open");
-
-    // close others
-    faqItems.forEach((other) => {
-      if (other !== item) {
-        other.classList.remove("open");
-        const ans = other.querySelector(".faq-answer");
-        if (ans) ans.style.maxHeight = null;
-      }
-    });
-
-    if (!isOpen) {
-      item.classList.add("open");
-      answer.style.maxHeight = answer.scrollHeight + "px";
-    } else {
-      item.classList.remove("open");
-      answer.style.maxHeight = null;
-    }
-  });
-});
-
-// Back to top button
-const backToTop = document.getElementById("backToTop");
-window.addEventListener("scroll", () => {
-  const show = window.scrollY > 400;
-  if (show) {
-    backToTop.style.display = "flex";
-    backToTop.style.opacity = "1";
-  } else {
-    backToTop.style.opacity = "0";
-    setTimeout(() => {
-      if (window.scrollY <= 400) backToTop.style.display = "none";
-    }, 150);
-  }
-});
-
-backToTop.addEventListener("click", () => {
-  window.scrollTo({ top: 0, behavior: "smooth" });
-});
-
-// Dynamic year in footer
-const yearSpan = document.getElementById("year");
-if (yearSpan) {
-  yearSpan.textContent = new Date().getFullYear();
-}
